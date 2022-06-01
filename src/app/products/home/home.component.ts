@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
       this.searchedData=res;
     })
     this.getAllCartsProducts();
-    this.FiltergetAllProducts();
   }
 
   getAllCartsProducts() {
@@ -84,22 +83,7 @@ export class HomeComponent implements OnInit {
   }
 
   //
-  FiltergetAllProducts(){
-    const dbInstace = collection(this.fireStore, 'adminProducts');
-    getDocs(dbInstace)
-    .then((res) => {
-      this.allProductData = res.docs.map((item) => {
-        return { ...item.data(), id: item.id };
-      });
-      this.totalLength=this.allProductData.length;
-      console.log(this.totalLength,"mnbv");
-      this.isLoader=false;
-      this.isPagination=true;
-    })
-    .catch((err) => {
-      alert(err.message);
-    });
-  }
+ 
   //
 
 
