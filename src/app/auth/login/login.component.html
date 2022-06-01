@@ -1,0 +1,45 @@
+  <div class="login-wrapper mt-5">
+      
+    <div class="row justify-content-center">
+        <h1>Login</h1>
+        <div class="col-lg-8">
+            <form [formGroup]="loginForm" (submit)="login()">
+                <div class="form-group mb-3">
+                    <label>Email</label>
+                    <input type="text" formControlName="email" class="form-control">
+                   
+                </div>
+                <div *ngIf="email.touched && email.invalid" class="text-danger">
+                    <div *ngIf="email.errors?.['required']">Email is required</div>
+                    <div *ngIf="email.errors?.['email']">Email is not valid</div>
+                 </div>
+                <div class="form-group mb-3">
+                    <label>Password</label>
+                    <input [type]="changeType?'password':'text'" formControlName="password" class="form-control">
+                    <span class="eye-icon" (click)="viewPassword()" [ngClass]="isVisible?'fa-solid fa-eye':'fa-solid fa-eye-slash'"></span>
+                </div>
+                <div *ngIf="password.touched && password.invalid" class="text-danger">
+                    <div *ngIf="password.errors?.['required']">Password is required</div>
+                    <div *ngIf="password.errors?.['password']">Password is required</div>
+                   
+                   </div>
+                <div class="form-group mb-2">
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn  login-btn"  >Login</button>
+                </div>
+                <div class="text-center">
+                   <span>Don't have account?</span> <a class="text-secondary mx-2" routerLink="/auth/register">New Register</a>
+                </div>
+                <div class="form-group mb-3">
+                    <button (click)="siginWithGoogle()" type="button" class="btn  google-login-btn">
+                        <img height="50%" src="../../../assets/image/icons8-google.svg" alt=""
+                        >
+                        Sign In With Google</button>
+                </div>
+               </form>
+               
+        </div>
+    </div>
+  </div>
+
+ 
+  

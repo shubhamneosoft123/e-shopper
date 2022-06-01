@@ -1,0 +1,49 @@
+<div class="container mt-3">
+   <div class="text-center">
+    <h1 class="admin-heading">Admin Portal</h1>
+   </div>
+
+   <div>
+    <a routerLink="/admin/admin-add-product" class="btn addproduct-btn mb-2">Add Product+</a>
+    <input
+      class="form-control serch"
+      type="text"
+      placeholder="Search"
+      width="30%"
+      [(ngModel)]="productName"
+      aria-label="Search"
+      
+    />
+   </div>
+
+    <table class="table table-hover table-bordered table-responsive">
+        
+            <thead class="">
+                <tr class="text-center">
+                    <th class="p-3">Sn.NO</th>
+                    <th class="p-3">Product Image</th>
+                    <th class="p-3">Product Name</th>
+                    <th class="p-3">Disription</th>
+                    <th class="p-3">Price</th>
+                    <th class="p-3">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="text-center" *ngFor="let data of allProductData |    filter:productName ;let i=index ">
+                     <td>{{i+1}}</td>
+                     <td><img height="40px" width="40px" src="{{data.productImage}}"></td>
+                     <td>{{data.productName}}</td>
+                     <td>{{data.discription}}</td>
+                     <td>{{data.productPrice|currency:'INR'}}</td>
+                   
+
+                    <td>
+    <a class="btn btn-success" routerLink="/admin/admin-editproduct/{{data.id}}"><i class="fa-regular fa-pen-to-square"></i></a>
+    <a class="btn btn-warning mx-4" (click)="deleteProduct(data.id)" ><img src="../../../assets/image/trash.svg"></a>
+</td>
+</tr>
+</tbody>
+
+</table>
+</div>

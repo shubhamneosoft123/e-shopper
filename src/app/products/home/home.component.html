@@ -1,0 +1,77 @@
+<div class="container mt-4">
+  <!-- Spinner and loading -->
+  <div class="loader-wrapper" *ngIf="isLoader">
+    <div class="loader"></div>
+      <span>Loading</span><span class="one">.</span><span class="two">.</span><span class="three">.</span>
+  </div>
+
+<!-- filter -->
+<div *ngIf="isPagination" class="filter-wrapper">
+  <input
+class="form-control serch"
+type="text"
+placeholder="Search"
+width="30%"
+[(ngModel)]="productName"
+aria-label="Search"
+
+/>
+<button class="btn btn-outline-primary mx-1" type="submit">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+</div>
+<!--  -->
+ <div *ngIf="isPagination" class="home-wrapper">
+  <div class="row mt-2">
+    <div class="col-lg-3">
+      <ul class="list-group">
+        <li class="list-group-item" ><h3>Categories</h3></li>
+        <li class="list-group-item" (click)="FiltergetAllProducts()">All Products</li>
+        <li class="list-group-item" (click)="filterProducts('footwear')">Footwear</li>
+        <li class="list-group-item" (click)="filterProducts('clothing')">Clothing</li>
+      <li class="list-group-item" (click)="filterProducts('acceseries')">Accessories</li>
+      </ul>
+    </div>
+   
+    <div class="col-lg-9">
+      <div class="row">
+        <div
+        class="col-12 col-sm-8 col-md-6 col-lg-4"
+        *ngFor="let item of allProductData |filter:productName | filter: searchedData |
+         paginate: { itemsPerPage: 6, currentPage: page,
+          totalItems:totalLength
+        }"
+      >
+        <div class="card mb-3">
+          <div>
+            <a routerLink="/products/product-details/{{ item.id }}">
+              <img
+                class="card-img"
+                src="{{ item.productImage }}"
+                alt="Vans"
+            /></a>
+    
+          </div>
+          <div class="card-body">
+            <a routerLink="/products/product-details/{{ item.id }}"
+              ><h4 class="card-title">{{ item.productName }}</h4></a
+            >
+            <p class="card-text">{{ item.discription }}</p>
+            <div class="buy d-flex justify-content-between align-items-center">
+              <div class="price text-success">
+                <h5 class="">{{ item.productPrice | currency: "INR" }}</h5>
+              </div>
+              <button class="btn btn-cart" (click)="addToCart(item.id)"
+              [disabled]="itemExists.includes(item.id)"
+                ><i class="fas fa-shopping-cart"></i> Add</button
+              >
+            </div>
+          </div>
+        </div>
+       </div>
+      </div>
+    </div>
+    <pagination-controls  class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>
+ </div>
+</div>

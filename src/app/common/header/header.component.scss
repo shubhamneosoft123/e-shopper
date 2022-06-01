@@ -1,0 +1,111 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .navbar-brand {
+    font-size: 25px;
+    font-family: "Poppins-bold";
+    position: relative;
+    margin-left: 50px;
+    .brand-name {
+      color: blue;
+    }
+    
+  }
+  
+
+  a {
+    color: #111;
+  }
+  .navbar-nav {
+    align-items: center;
+    &.nav-links {
+      width: 100%;
+      justify-content: space-between;
+      list-style: none;
+      margin-top: 10px;
+    }
+    .nav-item {
+      margin-left: 0.4rem;
+
+      .nav-link {
+        font-family: "Poppins-regular";
+        font-size: 1rem;
+        text-decoration: none;
+        position: relative;
+        
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            left: 0;
+            bottom: 0px;
+            background-color: #FE980F; /*Change this to increase/decrease distance*/
+            transition: 0.3s all;
+          }
+        &:hover {
+          &:after {
+            width: 100%;
+          }
+        }
+        &.btn-login{
+            background-color: #111;
+            color: #ffffff;
+            padding: 2px;
+        }
+        .badge{
+            background-color:#FE980F;
+        }
+      }
+      .form-control {
+        border-radius:  0.1rem;
+      }
+      .btn {
+        &.btn-outline-primary {
+          border: 1px solid #ced4da;
+          border-radius: 0.1rem;
+          color: #FE980F;
+          &:hover{
+            background-color:#FE980F;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-login{
+    border-style: none;
+    letter-spacing: 1px;
+    background-image: none;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    background-color: #FE980F;
+      color: #ffffff;
+    border: 1px solid #FE980F ;
+    &:hover{
+     
+      background-color: #ffffff;
+      color: #FE980F;
+  }
+  }
+  .btn-logout{
+    border-style: none;
+    letter-spacing: 1px;
+    background-image: none;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    background-color: #ffffff;
+    color: #FE980F;
+    border: 1px solid #FE980F ;
+    &:hover{
+      background-color: #FE980F;
+      color: #ffffff;
+  }
+  }
+}

@@ -1,0 +1,212 @@
+// .form-control {
+//     border-radius:  0.1rem;
+//     border: 1px solid #e7c699;
+//   }
+
+
+.home-wrapper{
+
+    .list-group-item{
+        color: #111;
+        font-family: "Poppins-regular";
+        h3{
+            font-family: "Poppins-bold";
+            font-size: 20px;
+            color: #ffffff;
+        }
+        &:first-child{
+            background-color: #FE980F;
+        }
+        &:hover{
+            background-color: rgba(246, 212, 149, 0.958);
+            color: #ffffff;
+            cursor: pointer;
+            &:first-child{
+                cursor: default;
+                background-color: #FE980F;
+            }
+        }
+    }
+   
+    
+    
+   
+    
+}
+
+
+
+
+
+
+
+
+.filter-wrapper{
+    display: flex;
+    justify-content: end;
+}
+  .serch{
+    
+      width: 23.5%;
+      
+  }
+  .btn {
+    &.btn-outline-primary {
+      border: 1px solid #ced4da;
+      border-radius: 0.1rem;
+      background-color:#FE980F;
+      color: #ffffff;
+      &:hover{
+        background-color:#ffffff;
+        color: #FE980F;
+        border: 1px solid #FE980F ;
+      }
+    }
+  }
+.card{
+    font-family: "Poppins-regular";
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    &:hover:before {
+        transform: scale(2.15);
+      }
+}
+.form-control {
+    border-radius:  0.1rem;
+  }
+  .btn-cart{
+      background-color: #FE980F;
+      color: #ffffff;
+      padding: 3px 10px;
+  }
+  .btn-cart:hover{
+    background-color: #ffffff;
+    color: #FE980F;
+    border: 1px solid #FE980F;
+}
+
+  a{
+      text-decoration: none;
+  }
+//   .my-pagination /deep/ .ngx-pagination .current {
+//     background: red;
+//   }
+::ng-deep.ngx-pagination{
+    .current{
+        background-color: #FE980F!important;
+    }
+}
+
+.card-title{
+    font-size: 1.3rem;
+}
+
+.loader-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #FE980F;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  //
+//   .loading:after {
+//     overflow: hidden;
+//     display: inline-block;
+//     vertical-align: bottom;
+//     -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+//     animation: ellipsis steps(4,end) 900ms infinite;
+//     content: "\2026"; /* ascii code for the ellipsis character */
+//     width: 0px;
+//   }
+  
+//   @keyframes ellipsis {
+//     to {
+//       width: 20px;    
+//     }
+//   }
+  
+//   @-webkit-keyframes ellipsis {
+//     to {
+//       width: 20px;    
+//     }
+//   }
+
+.one {
+    opacity: 10;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.0s;
+}
+
+.two {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.2s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.2s;
+}
+
+.three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.3s;
+}
+
+@-webkit-keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes dot {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+  
+  

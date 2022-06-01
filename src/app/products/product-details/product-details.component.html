@@ -1,0 +1,30 @@
+<div class="container">
+    <h3 class="product-heading">Product Details</h3>
+   
+    <div class="product-wrapper">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="pro-right-wrapper">
+                    <img src="{{finalDetails?.productImage}}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pro-right-wrapper">
+                    <div class="pro-border">
+                    </div>
+                    <h2 class="pro-name">{{finalDetails?.productName}}</h2>
+                    <div class="pro-price">
+                      {{finalDetails?.productPrice|currency:"INR"}}
+                    </div>
+                    <div class="pro-disc">
+                        <p>{{finalDetails?.discription}}</p>
+                    </div>
+                    <div>
+                        <button (click)="addToCart(finalDetails?.id)"  class="pro-btn">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
